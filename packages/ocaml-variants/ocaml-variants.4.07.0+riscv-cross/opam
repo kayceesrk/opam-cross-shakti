@@ -3,7 +3,7 @@ maintainer: "kc@kcsrk.info"
 flags: compiler
 build: [
   ["./configure" "-no-ocamldoc" "-no-debugger" "-prefix" "%{build}%/install"]
-  ["make" "-j4"]
+  ["make" "-j4" "world.opt"]
   ["make" "install"]
   ["./configure" "--target" "riscv64-unknown-linux-gnu" "-no-ocamldoc" "-no-debugger" "-target-bindir" "%{build}%/install/bin"]
   ["make" "-j4" "world" "||" "/bin/true"]
@@ -12,7 +12,10 @@ build: [
 url {
   src: "git://github.com/kayceesrk/riscv-ocaml#4.07+cross"
 }
-build-env: [BUILD_DIR = "%{build}%/install"]
+build-env: [
+	[BUILD_DIR = "%{build}%/install" PATH="$PAT]
+	[PATH += "$(BUILD_DIR)"]
+]
 install: [
   ["cp" "%{build}%/install/bin/ocamlrun" "byterun"]
   ["make" "install"]
