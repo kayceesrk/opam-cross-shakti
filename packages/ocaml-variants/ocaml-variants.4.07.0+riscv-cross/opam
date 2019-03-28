@@ -2,9 +2,9 @@ opam-version: "2.0"
 maintainer: "kc@kcsrk.info"
 flags: compiler
 depends: [
-  "ocaml-base-compiler" {= "4.07.1"} |
-	"ocaml-variants" {>= "4.07.1" & < "4.07.2~"} |
-	"ocaml-system" {= "4.07.1"}
+  "ocaml-base-compiler" {= "4.07.0"} |
+	"ocaml-variants" {>= "4.07.0" & < "4.07.1~"} |
+	"ocaml-system" {= "4.07.0"}
 ]
 build: [
 	["./configure" "--target" "riscv64-unknown-linux-gnu" "-no-ocamldoc" "-no-debugger" "-target-bindir" "$RISCV/bin"]
