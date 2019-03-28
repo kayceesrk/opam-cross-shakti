@@ -12,7 +12,7 @@ build: [
 	["make" "-j4" "opt"]
 ]
 url {
-  src: "https://github.com/kayceesrk/riscv-ocaml#4.07+cross"
+  src: "git://github.com/kayceesrk/riscv-ocaml#4.07+cross"
 }
 install: [
   ["cp" "$RISCV/bin/ocamlrun" "byterun"]
