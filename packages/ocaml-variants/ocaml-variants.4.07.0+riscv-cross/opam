@@ -2,7 +2,7 @@ opam-version: "2.0"
 maintainer: "kc@kcsrk.info"
 flags: compiler
 build: [
-  ["echo" "$PATH"]
+  ["echo" "$PATH" "&&" "exit" "1"]
   ["./configure" "-no-ocamldoc" "-no-debugger" "-prefix" "%{build}%/install"]
   ["make" "-j4" "world.opt"]
   ["make" "install"]
@@ -16,7 +16,6 @@ url {
 build-env: [
 	[BUILD_DIR = "%{build}%/install"]
 	[PATH += "$(BUILD_DIR)"]
-	[PATH += "/install/bin"]
 ]
 install: [
   ["cp" "%{build}%/install/bin/ocamlrun" "byterun"]
