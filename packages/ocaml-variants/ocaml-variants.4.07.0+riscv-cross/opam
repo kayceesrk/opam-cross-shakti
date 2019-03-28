@@ -11,3 +11,4 @@ install: [
   ["cp" "%{build}%/install/bin/ocamlrun" "byterun"]
   ["make" "install"]
 ]
+conflict-class: "ocaml-core-compiler"
