@@ -13,7 +13,7 @@ url {
   src: "git://github.com/kayceesrk/riscv-ocaml#4.07+cross"
 }
 build-env: [
-	[BUILD_DIR = "%{build}%/install" PATH="$PAT]
+	[BUILD_DIR = "%{build}%/install"]
 	[PATH += "$(BUILD_DIR)"]
 ]
 install: [
