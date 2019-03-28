@@ -2,7 +2,6 @@ opam-version: "2.0"
 maintainer: "kc@kcsrk.info"
 flags: compiler
 build: [
-  ["echo" "$PATH" "&&" "exit" "1"]
   ["./configure" "-no-ocamldoc" "-no-debugger" "-prefix" "%{build}%/install"]
   ["make" "-j4" "world.opt"]
   ["make" "install"]
