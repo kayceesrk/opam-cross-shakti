@@ -2,7 +2,7 @@ opam-version: "2.0"
 maintainer: "kc@kcsrk.info"
 flags: compiler
 build: [
-  ["./configure "-no-ocamldoc" "-no-debugger" "-prefix" "%{build}%/install"]
+  ["./configure "-no-ocamldoc" "-no-debugger" "-prefix" "$(BUILD_DIR)/install"]
 	["make" "-j4"]
 	["make" "install"]
 	["./configure" "--target" "riscv64-unknown-linux-gnu" "-no-ocamldoc" "-no-debugger" "-target-bindir" "%{build}%/install/bin"]
@@ -12,6 +12,7 @@ build: [
 url {
   src: "git://github.com/kayceesrk/riscv-ocaml#4.07+cross"
 }
+build-env: [BUILD_DIR = %{build}%]
 install: [
   ["cp" "%{build}%/install/bin/ocamlrun" "byterun"]
 	["make" "install"]
