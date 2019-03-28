@@ -5,7 +5,6 @@ build: [
 	["sh" "-c" "./build.sh"]
 ]
 depends: [
-  "ocaml" {= "4.07.0" & post}
 	"base-bigarray" {post}
 ]
 url {
