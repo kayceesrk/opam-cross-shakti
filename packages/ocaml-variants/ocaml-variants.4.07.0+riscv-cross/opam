@@ -7,10 +7,7 @@ build: [
 url {
   src: "git://github.com/kayceesrk/riscv-ocaml#4.07+cross"
 }
-build-env: [
-	[BUILD_DIR = "%{build}%/install"]
-	[PATH += "$(BUILD_DIR)"]
-]
+substs: "build.sh"
 install: [
   ["cp" "%{build}%/install/bin/ocamlrun" "byterun"]
   ["make" "install"]

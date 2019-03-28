@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export PATH=%{build}%/install:$(PATH)
 ./configure -no-ocamldoc -no-debugger -prefix %{build}%/install
 make -j world.opt
 make install
