@@ -7,7 +7,7 @@ build: [
   ["make" "install"]
 	["make" "clean"]
   ["./configure" "--target" "riscv64-unknown-linux-gnu" "-no-ocamldoc" "-no-debugger" "-target-bindir" "%{build}%/install/bin"]
-  ["sh" "-c" "make" "all" "||" "/bin/true"]
+  ["sh" "-c" "make" "-j4" "world" "||" "/bin/true"]
   ["make" "-j4" "opt"]
 ]
 url {
